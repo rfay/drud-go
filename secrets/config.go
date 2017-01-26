@@ -28,8 +28,6 @@ func ConfigVault(token string, vaultHost string) {
 	vClient.SetToken(token)
 
 	vault = *vClient.Logical()
-
-	return cTok
 }
 
 // GetTokenDetails returns a map of the user's token info
