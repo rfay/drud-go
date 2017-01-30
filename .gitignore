@@ -1,0 +1,6 @@
+linux
+darwin
+build
+VERSION.txt
+.go/
+bin/
