@@ -385,7 +385,7 @@ func GetJWT(token string, vaultHost string, projectID string) ([]byte, error) {
 	return jwt, nil
 }
 
-// authVault uses providedf git token and vault address to create an authenticated vautl client
+// authVault uses provided git token and vault address to create an authenticated vault client
 func authVault(token string, vaultHost string) error {
 
 	// Write our token to a tempfile and configure vault to use it.
@@ -401,7 +401,9 @@ func authVault(token string, vaultHost string) error {
 	}
 
 	mountInput := map[string]string{
-		"mount": "github",
+		// In the future we might want this to be configurable, but
+		// it currently is assumed to use the drud organization for auth
+		"mount": "github_drud",
 		"token": token,
 	}
 
